@@ -11,7 +11,7 @@ from drf_yasg.utils import swagger_auto_schema
 
 User = get_user_model()
 
-@swagger_auto_schema(methods=['POST'],request_body=CustomUserSerializer())
+@swagger_auto_schema(methods=['POST'], request_body=CustomUserSerializer())
 @api_view(['GET','POST'])
 def users(request):
     if request.method == 'GET':
@@ -44,7 +44,7 @@ def users(request):
             return Response(error, status=status.HTTP_400_BAD_REQUEST)
         
        
-@swagger_auto_schema(methods=['PUT','DELETE'],request_body=CustomUserSerializer())    
+@swagger_auto_schema(methods=['PUT','DELETE'], request_body=CustomUserSerializer())    
 @api_view(['GET', 'PUT', 'DELETE'])
 def user_detail(request, user_id):
     """
@@ -55,7 +55,7 @@ def user_detail(request, user_id):
     
     Allowed methods:
     GET- Get the details of a single user
-    PUT- Allows the user detail to be edited
+    PUT- Allows the user details to be edited
     DELETE- This logic deletes the user record from the database
     """
     try:
@@ -109,13 +109,13 @@ def login(request):
                 if user.is_active:
                     serializer = CustomUserSerializer(user)
                     data = {
-                        'message':'Login Successful',
-                        'data':serializer.data
+                        "message":"Login Successful",
+                        "data":serializer.data
                     }
                     return Response(data, status=status.HTTP_200_OK)
                 else:
                     error = {
-                        'message':'Please activate your account',
+                        "message":"Please activate your account",
                     }
             
                     return Response(error, status=status.HTTP_401_UNAUTHORIZED) 

@@ -21,9 +21,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="To-Do API",
+        title="To-Do List API",
         default_version="v1",
-        description="API documentation for our to-do api.",
+        description="API documentation for our to-do list api.",
         terms_of_service="",
         contact=openapi.Contact(email="p3xtra@gmail.com"),
         license=openapi.License(name="MIT License"), 

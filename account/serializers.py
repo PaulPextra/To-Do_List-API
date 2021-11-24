@@ -14,9 +14,9 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=200)
     
 class ChangePasswordSerializer(serializers.Serializer):
-    old_password = serializers.CharField(max_length=500)
-    new_password = serializers.CharField(max_length=500)
-    re_password = serializers.CharField(max_length=500)
+    old_password = serializers.CharField(max_length=200)
+    new_password = serializers.CharField(max_length=200)
+    re_password = serializers.CharField(max_length=200)
     
     def validate_new_password(self, value):
         if value != self.initial_data['re_password']:

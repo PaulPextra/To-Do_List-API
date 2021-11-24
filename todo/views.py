@@ -9,10 +9,10 @@ from drf_yasg.utils import swagger_auto_schema
 # Creating our Views
 @swagger_auto_schema(methods=['POST'],request_body=TodoSerializer())
 @api_view(['GET','POST'])
-def todos(request):
+def todo_list(request):
     if request.method=='GET':
-        all_todos = Todo.objects.all()
-        serializer = TodoSerializer(all_todos, many=True)
+        all_todo = Todo.objects.all()
+        serializer = TodoSerializer(all_todo, many=True)
         data = {
             "message":"success",
             "data":serializer.data
@@ -41,15 +41,15 @@ def todos(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def todo_detail(request, todo_id):
     """
-    Takes in todo id and returns the http response depending on the http method.
+    Takes in to-do id and returns the http response depending on the http method.
     
     Args:
     todo_id: Interger
     
     Allowed methods:
-    GET- Get the details of a single user Todo
-    PUT- Allows the user Todo to be edited
-    DELETE- This logic deletes the user todo record from the database
+    GET- Get the details of a single user to-do
+    PUT- Allows the user to-do to be edited
+    DELETE- This logic deletes the user to-do record from the database
     """
     try:
         todo = Todo.objects.get(id=todo_id)
