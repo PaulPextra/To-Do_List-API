@@ -24,7 +24,6 @@ def users(request):
         return Response(data, status=status.HTTP_200_OK)
     
     elif request.method == 'POST':
-        
         serializer = CustomUserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.validated_data['password'] = make_password(
@@ -71,7 +70,7 @@ def user_detail(request, user_id):
     if request.method == 'GET':
         serializer = CustomUserSerializer(user)
         data = {
-            "message": "Success!",
+            "message": "Success",
             "data": serializer.data
         }
         return Response(data, status=status.HTTP_200_OK)

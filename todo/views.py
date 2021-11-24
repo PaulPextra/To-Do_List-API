@@ -1,17 +1,12 @@
 from . models import Todo
 from . serializers import TodoSerializer
-from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from rest_framework.authentication import BasicAuthentication
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.exceptions import ValidationError
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
 
 
 # Creating our Views
-@authentication_classes([BasicAuthentication])
-@permission_classes([IsAuthenticated])
 @swagger_auto_schema(methods=['POST'],request_body=TodoSerializer())
 @api_view(['GET','POST'])
 def todos(request):
@@ -49,7 +44,7 @@ def todo_detail(request, todo_id):
     Takes in todo id and returns the http response depending on the http method.
     
     Args:
-    Todo_id: Interger
+    todo_id: Interger
     
     Allowed methods:
     GET- Get the details of a single user Todo
@@ -92,3 +87,4 @@ def todo_detail(request, todo_id):
         if request.method == "DELETE":
             todo.delete()
             return Response({"message":"success"}, status=status.HTTP_204_NO_CONTENT)
+        

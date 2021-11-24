@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'rest_framework',
     'drf_yasg',
+    'coreapi',
 ]
 
 AUTH_USER_MODEL = 'account.CustomUser'
