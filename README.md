@@ -10,7 +10,7 @@ A user can create multiple to-dos.**
 
 ### Implementation 1
 
-**A user should be authenticated to be able to create a to-do list. The user should be able to create multiple to-do list and also retrieve a single to-do list. Each user has a unique ID and each to-do list created has a unique ID as well**
+**A user should be authenticated to be able to create a to-do list. The user should be able to create multiple to-do list and also retrieve a single to-do list. Each user has a unique ID and each to-do list created has a unique ID as well.**
 
 ### Implementation 2
 
@@ -19,6 +19,7 @@ A user can create multiple to-dos.**
 ### Implementation 3
 
 **The consumer of this API should be able to retrieve the data for all users and as well as the data for a single user by their unique ID.**
+
 ---
 
 **Author: Paul Okoli**
