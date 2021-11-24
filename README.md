@@ -4,8 +4,9 @@
 
 ---
 
-**A To-Do API where users, can signup, login, edit their profile, create a to-do, edit their to-do, see the list of all to-do created, retrieve a particular todo, and delete a todo. 
-When a user signup, s/he should recieve an activation email. The user should be able to perform the CRUD functionality, i.e creating a to-do, retrieving a single to-do, updating a to-do and also deleting a to-do.
+**An API exists to communicate with another program. This To-Do API should allow users to signup, login, edit their profile, create a to-do, edit their to-do, see the list of all to-do created, retrieve a particular todo, and delete a todo. 
+When a user signup, s/he should recieve an activation email. 
+The user should be able to perform the CRUD functionality, i.e creating a to-do, retrieving a single to-do, updating a to-do and also deleting a to-do.
 A user can create multiple to-dos.**
 
 ### Implementation 1
