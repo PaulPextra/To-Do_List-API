@@ -23,4 +23,4 @@ A user can create multiple to-dos.**
 ---
 
 **Author: Paul Okoli**
-[Linkdin Profile](https://www.linkedin.com/in/paulokoli/)
+[Linkedin Profile](https://www.linkedin.com/in/paulokoli/)
