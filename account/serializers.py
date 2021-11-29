@@ -8,10 +8,6 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
-        
-class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField(max_length=200)
-    password = serializers.CharField(max_length=200)
     
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(max_length=200)
