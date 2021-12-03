@@ -99,7 +99,7 @@ def todo_detail(request, todo_id):
                 'data' : serializer.data,
             }
 
-            return Response(data, status = status.HTTP_201_CREATED)
+            return Response(data, status=status.HTTP_202_ACCEPTED)
 
         else:
             data = {
