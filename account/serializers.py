@@ -13,8 +13,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
                   'email', 'address', 
                   'password', 
                   'is_active', 
-                  'date_joined', 
-                  'last_login']
+                  'date_joined']
         
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(max_length=200)
