@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.signals import user_logged_in
 from django.contrib.auth.hashers import make_password, check_password
-from . serializers import CustomUserSerializer, ChangePasswordSerializer
+from . serializers import CustomUserSerializer, ChangePasswordSerializer, ProfileSerializer
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
@@ -73,7 +73,7 @@ def get_user(request):
         
        
 # Get the detail of a single user by their ID
-@swagger_auto_schema(methods=['PUT', 'DELETE'], request_body=CustomUserSerializer())
+@swagger_auto_schema(methods=['PUT', 'DELETE'], request_body=ProfileSerializer())
 @api_view(['GET', 'PUT', 'DELETE'])
 @authentication_classes([BasicAuthentication])
 @permission_classes([IsAuthenticated])
@@ -95,7 +95,7 @@ def profile(request):
 
     if request.method=='GET':
         
-        serializer = CustomUserSerializer(user)
+        serializer = ProfileSerializer(user)
         
         data = {
             'status'  : True,
@@ -108,7 +108,7 @@ def profile(request):
     # Update the profile of the user
     elif request.method=='PUT':
         
-        serializer = CustomUserSerializer(user, data=request.data, partial=True) 
+        serializer = ProfileSerializer(user, data=request.data, partial=True) 
 
         if serializer.is_valid():
             

@@ -14,6 +14,16 @@ class CustomUserSerializer(serializers.ModelSerializer):
                   'password', 
                   'is_active', 
                   'date_joined']
+
+class ProfileSerializer(serializers.Serializer):
+    first_name = serializers.CharField(max_length=200)
+    last_name = serializers.CharField(max_length=200)
+    username = serializers.CharField(max_length=200)
+    email = serializers.CharField(max_length=200)
+    phone = serializers.CharField(max_length=20)
+    gender = serializers.CharField(max_length=10)
+    address = serializers.CharField(max_length=200)
+    is_active = serializers.BooleanField(default=True)
         
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(max_length=200)
